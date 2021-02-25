@@ -28,8 +28,12 @@ export default {
   background: pink;
   display: flex;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 10;
+  justify-content: center;
+  align-items: center;
 
   > .logo {
     max-width: 6em;
@@ -45,17 +49,18 @@ export default {
       margin: 0 1em;
     }
   }
+
   @media (max-width: 500px) {
-    .menu{
+    .menu {
       display: none;
     }
-    .logo{
+    .logo {
       align-items: center;
       margin: 0 auto;
     }
   }
-  @media (min-width: 500px){
-    .toggalMenu{
+  @media (min-width: 500px) {
+    .toggalMenu {
       display: none;
     }
   }

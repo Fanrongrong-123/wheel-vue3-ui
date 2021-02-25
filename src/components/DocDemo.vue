@@ -1,10 +1,10 @@
 <template>
-<div>我是test.vue</div>
+<div>我是DocDemo</div>
 </template>
 
-<script lang="js">
+<script>
 export default {
-name: "test"
+  name: 'DocDemo'
 }
 </script>
 
