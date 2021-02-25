@@ -1,6 +1,7 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggalMenu">LOGO</div>
+    <span class="toggalMenu" @click="toggalMenu">xxx</span>
+    <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单一</li>
       <li>菜单二</li>
@@ -17,7 +18,7 @@ export default {
     const toggalMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
-    return {toggalMenu}
+    return {toggalMenu};
   }
 };
 </script>
@@ -42,6 +43,20 @@ export default {
 
     > li {
       margin: 0 1em;
+    }
+  }
+  @media (max-width: 500px) {
+    .menu{
+      display: none;
+    }
+    .logo{
+      align-items: center;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: 500px){
+    .toggalMenu{
+      display: none;
     }
   }
 }

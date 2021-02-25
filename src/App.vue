@@ -9,8 +9,9 @@ import {ref, provide} from 'vue';
 
 export default {
   setup() {
-    const menuVisible = ref(false);
-    provide('menuVisible', menuVisible);
+    const width = document.documentElement.clientWidth;
+    const menuVisible = ref(width >= 500);
+    provide('menuVisible', menuVisible); //set
   }
 };
 </script>
