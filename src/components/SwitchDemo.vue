@@ -1,6 +1,7 @@
 <template>
   <!--  <Switch :value="value" @update:value="value=$event"/>-->
   <Switch v-model:value="value"/>
+  <!--  双向绑定value（自动监听value的值）-->
 </template>
 
 <script lang="ts">
@@ -10,7 +11,7 @@ import {ref} from 'vue';
 export default {
   components: {Switch},
   setup() {
-    const value = ref(false);
+    const value =ref(localStorage.getItem('x') || false);
     return {value};
   }
 };

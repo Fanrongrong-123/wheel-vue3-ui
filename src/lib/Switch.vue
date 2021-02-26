@@ -18,6 +18,7 @@ export default {
     const toggle = () => {
       context.emit('update:value', !props.value);
     };
+    localStorage.setItem('x', props.value);
     return {toggle};
   }
 };
@@ -35,6 +36,25 @@ button {
   position: relative;
   font-size: 8px;
 
+  &.checked > span {
+    left: calc(100% - #{$h2} - 2px); // 移到最外面再向内移一个span的宽度加两像素
+    > .on {
+      display: block;
+    }
+
+    > .off {
+      display: none;
+    }
+  }
+
+  &.checked {
+    background: blue;
+  }
+
+  &:focus {
+    outline: none; //消除button默认点击的border
+  }
+
   > span {
     position: absolute;
     top: 2px;
@@ -49,30 +69,12 @@ button {
       display: none;
     }
   }
-}
 
-button.checked > span {
-  left: calc(100% - #{$h2} - 2px); // 移到最外面再向内移一个span的宽度加两像素
-  > .on {
-    display: block;
-  }
-
-  > .off {
-    display: none;
+  > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-button.checked {
-  background: blue;
-}
-
-button:focus {
-  outline: none; //消除button默认点击的border
-}
-
-button > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 </style>
