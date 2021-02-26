@@ -1,74 +1,13 @@
 <template>
-  <div>我是SwitchDemo
-  <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-    <p>我是SwitchDemo</p>
-
-  </div>
+  <Switch/>
 </template>
 
-<script>
+<script lang="ts">
+import Switch from '../lib/Switch.vue';
+
 export default {
-  name: 'SwitchDemo'
-}
+  components: {Switch}
+};
 </script>
 
 <style lang="scss" scoped>

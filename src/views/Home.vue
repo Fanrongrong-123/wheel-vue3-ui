@@ -3,7 +3,7 @@
     <Topnav/>
     <div class="banner">
       <h1>Vue3 UI</h1>
-        <h2>一个厉害的UI框架</h2>
+      <h2>一个厉害的UI框架</h2>
       <p class="actions">
         <a href="#">GitHub</a>|
         <router-link to="/doc">开始</router-link>
@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import Topnav from '../components/topnav.vue';
+
 export default {
   name: 'Home',
   components: {Topnav}
@@ -28,10 +29,13 @@ export default {
   align-items: center;
   flex-direction: column;
   background: lightgreen;
-  > .actions{
+  flex-grow: 1;
+
+  > .actions {
     padding: 8px 0;
+
     a {
-      margin:0 8px;
+      margin: 0 8px;
       background: #fff;
       display: inline-block;
       $h: 28px;
