@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button class="wheel" :class="`theme-${theme}`">
     <slot/>
   </button>
 </template>
@@ -7,7 +7,12 @@
 <script lang="ts">
 export default {
   inheritAttrs: true,
-  props: {},
+  props: {
+    theme: {
+      type: String,
+      default: 'button'
+    }
+  },
 };
 </script>
 
