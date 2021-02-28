@@ -1,5 +1,5 @@
 <template>
-  <button class="wheel-button" :class="xxx">
+  <button class="wheel-button" :class="xxx" :disabled="disabled" :loading="loading">
     <slot/>
   </button>
 </template>
@@ -17,14 +17,29 @@ export default {
     size: {
       type: String,
       default: 'normal'
+    },
+    level: {
+      type: String,
+      default: 'normal'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
-    const {theme, size} = props;
-    const xxx = computed((props) => {
+    const {theme, size, level, disabled, loading} = props;
+    const xxx = computed(() => {
       return {
         [`wheel-theme-${theme}`]: theme,
         [`wheel-size-${size}`]: size,
+        [`wheel-level-${level}`]: level,
+        [`wheel-disabled-${disabled}`]: disabled,
+        [`wheel-loading-${loading}`]: loading,
       };
     });
     return {xxx};
@@ -36,8 +51,10 @@ export default {
 $h: 32px;
 $border-color: #9d9d9d;
 $color: #333;
-$green: #34FC7E;
+$green: #088300;
 $radius: 4px;
+$red: red;
+$grey: grey;
 .wheel-button {
   box-sizing: border-box;
   height: $h;
@@ -89,15 +106,92 @@ $radius: 4px;
       background: darken(white, 5%);
     }
   }
+
   &.wheel-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
+
   &.wheel-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
+  }
+
+  &.wheel-theme-button {
+    &.wheel-level-main {
+      background: $green;
+      color: white;
+      border-color: $green;
+
+      &:hover,
+      &:focus {
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
+      }
+    }
+
+    &.wheel-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
+      }
+    }
+  }
+
+  &.wheel-theme-link {
+    &.wheel-level-danger {
+      color: $red;
+
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+
+  &.wheel-theme-text {
+    &.wheel-level-main {
+      color: $green;
+
+      &:hover,
+      &:focus {
+        color: darken($green, 10%);
+      }
+    }
+
+    &.wheel-level-danger {
+      color: $red;
+
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+
+  &.wheel-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+
+  &.wheel-theme-link, &.wheel-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
   }
 }
 </style>
