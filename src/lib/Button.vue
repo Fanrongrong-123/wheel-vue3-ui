@@ -1,5 +1,5 @@
 <template>
-  <button class="wheel-button" :class="xxx" :disabled="disabled" :loading="loading">
+  <button class="wheel-button" :class="classes" :disabled="disabled" :loading="loading">
     <span v-if="loading" class="wheel-loadingIndicator"></span>
     <slot/>
   </button>
@@ -34,7 +34,7 @@ export default {
   },
   setup(props) {
     const {theme, size, level, disabled, loading} = props;
-    const xxx = computed(() => {
+    const classes = computed(() => {
       return {
         [`wheel-theme-${theme}`]: theme,
         [`wheel-size-${size}`]: size,
@@ -43,7 +43,7 @@ export default {
         [`wheel-loading-${loading}`]: loading,
       };
     });
-    return {xxx};
+    return {classes};
   }
 };
 </script>

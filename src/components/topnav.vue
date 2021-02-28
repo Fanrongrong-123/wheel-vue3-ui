@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <span class="toggalMenu" @click="toggalMenu">xxx</span>
+    <span class="toggalMenu" @click="toggalMenu">菜单</span>
     <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单一</li>
