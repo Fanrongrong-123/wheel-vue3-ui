@@ -1,18 +1,34 @@
 <template>
-  <button class="wheel-button" :class="`wheel-theme-${theme}`">
+  <button class="wheel-button" :class="xxx">
     <slot/>
   </button>
 </template>
 
 <script lang="ts">
+import {computed} from 'vue';
+
 export default {
   inheritAttrs: true,
   props: {
     theme: {
       type: String,
       default: 'button'
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
   },
+  setup(props) {
+    const {theme, size} = props;
+    const xxx = computed((props) => {
+      return {
+        [`wheel-theme-${theme}`]: theme,
+        [`wheel-size-${size}`]: size,
+      };
+    });
+    return {xxx};
+  }
 };
 </script>
 
@@ -20,7 +36,7 @@ export default {
 $h: 32px;
 $border-color: #9d9d9d;
 $color: #333;
-$blue: #40a9ff;
+$green: #34FC7E;
 $radius: 4px;
 .wheel-button {
   box-sizing: border-box;
@@ -42,8 +58,8 @@ $radius: 4px;
   }
 
   &:hover, &:focus {
-    color: $blue;
-    border-color: $blue;
+    color: $green;
+    border-color: $green;
   }
 
   &:focus {
@@ -52,6 +68,36 @@ $radius: 4px;
 
   &::-moz-focus-inner {
     border: 0;
+  }
+
+  &.wheel-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $green;
+
+    &:hover, &:focus {
+      color: lighten($green, 10%);
+    }
+  }
+
+  &.wheel-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+
+    &:hover, &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.wheel-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.wheel-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>

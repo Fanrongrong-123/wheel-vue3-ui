@@ -63,7 +63,7 @@ export default {
     > main {
       flex-grow: 1;
       padding: 16px;
-      background: lightgreen;
+      background: white;
     }
     @media (max-width: 500px) {
       padding-left: 0;
