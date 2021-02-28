@@ -1,5 +1,6 @@
 <template>
   <button class="wheel-button" :class="xxx" :disabled="disabled" :loading="loading">
+    <span v-if="loading" class="wheel-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -192,6 +193,27 @@ $grey: grey;
       cursor: not-allowed;
       color: $grey;
     }
+  }
+
+  > .wheel-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $green $green $green transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: wheel-spin 1s infinite linear;
+  }
+}
+
+@keyframes wheel-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
   }
 }
 </style>
