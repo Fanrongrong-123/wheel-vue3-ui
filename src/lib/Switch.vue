@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="toggle" :class="{checked:value}">
+    <button class="wheel-switch" @click="toggle" :class="{checked:value}">
       <span>
         <span class="off">off</span>
         <span class="on">on</span>
@@ -26,7 +26,7 @@ export default {
 <style scoped lang="scss">
 $h: 22px;
 $h2: 22-4px;
-button {
+.wheel-switch {
   height: $h;
   width: $h*2;
   border: none;
