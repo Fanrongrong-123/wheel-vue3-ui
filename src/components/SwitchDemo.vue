@@ -11,7 +11,7 @@ import {ref} from 'vue';
 export default {
   components: {Switch},
   setup() {
-    const value =ref(localStorage.getItem('x') || false);
+    const value = ref(false);
     return {value};
   }
 };

@@ -18,7 +18,6 @@ export default {
     const toggle = () => {
       context.emit('update:value', !props.value);
     };
-    localStorage.setItem('x', props.value);
     return {toggle};
   }
 };

@@ -1,13 +1,14 @@
 <template>
-
+  <button>
+    <slot/>
+  </button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: 'Button'
-}
+  inheritAttrs: true,
+  props: {},
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped lang="scss"></style>
