@@ -30,6 +30,12 @@ export default {
     closeOnclickOverlay: {
       type: Boolean,
       default: true
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function
     }
   },
   setup(props, context) {
@@ -42,9 +48,15 @@ export default {
       }
     };
     const ok = () => {
-      close();
+      const result = props.ok();
+      if (result && result !== false) {
+        close();
+      }else {
+        window.alert('请点击 cancel')
+      }
     };
     const cancel = () => {
+      props.cancel();
       close();
     };
     return {close, closeOnclickOverlay, ok, cancel};
