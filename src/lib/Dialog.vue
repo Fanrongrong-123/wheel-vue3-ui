@@ -1,18 +1,22 @@
 <template>
   <template v-if="visible">
-    <div class=" wheel-dialog-overlay" @click="closeOnclickOverlay"></div>
-    <div class=" wheel-dialog-wrapper">
-      <div class=" wheel-dialog">
-        <header> <slot name="title"/> <span class=" wheel-dialog-close" @click="close"></span></header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class=" wheel-dialog-overlay" @click="closeOnclickOverlay"></div>
+      <div class=" wheel-dialog-wrapper">
+        <div class=" wheel-dialog">
+          <header>
+            <slot name="title"/>
+            <span class=" wheel-dialog-close" @click="close"></span></header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -50,8 +54,8 @@ export default {
       const result = props.ok();
       if (result && result !== false) {
         close();
-      }else {
-        window.alert('请点击 cancel')
+      } else {
+        window.alert('请点击 cancel');
       }
     };
     const cancel = () => {
@@ -75,7 +79,6 @@ $border-color: #9d9d9d;
   max-width: 90%;
 
   &-overlay {
-    border: 1px solid red;
     position: fixed;
     top: 0;
     left: 0;
