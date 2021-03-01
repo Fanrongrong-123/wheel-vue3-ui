@@ -11,12 +11,15 @@
       <strong>标题</strong>
     </template>
   </Dialog>
+  <h1>示例2</h1>
+  <Button @click="showDialog">show</Button>
 </template>
 
 <script>
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
 import {ref} from 'vue'
+import {openDialog} from '../lib/openDialog'
 
 export default {
   components: {Button, Dialog},
@@ -30,7 +33,16 @@ export default {
 
     const cancel = () => {console.log('h2')}
 
-    return {visible, toggle, ok, cancel}
+    const showDialog = () => {
+      openDialog(
+          {
+            title: '标题', content: '你好',
+            ok() {console.log('ok')},
+            cancel() {console.log('cancel')},
+            closeOnclickOverlay: true
+          })
+    }
+    return {visible, toggle, ok, cancel, showDialog}
   }
 }
 </script>

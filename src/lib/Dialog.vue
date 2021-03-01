@@ -54,12 +54,10 @@ export default {
       const result = props.ok();
       if (result && result !== false) {
         close();
-      } else {
-        window.alert('请点击 cancel');
       }
     };
     const cancel = () => {
-      props.cancel();
+      props.cancel?.(); //props.cancel && props.cancel()
       close();
     };
     return {close, closeOnclickOverlay, ok, cancel};
