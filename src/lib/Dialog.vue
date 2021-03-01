@@ -3,9 +3,9 @@
     <div class=" wheel-dialog-overlay" @click="closeOnclickOverlay"></div>
     <div class=" wheel-dialog-wrapper">
       <div class=" wheel-dialog">
-        <header>{{ title }} <span class=" wheel-dialog-close" @click="close"></span></header>
+        <header> <slot name="title"/> <span class=" wheel-dialog-close" @click="close"></span></header>
         <main>
-          <slot/>
+          <slot name="content"/>
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
@@ -35,10 +35,6 @@ export default {
     },
     cancel: {
       type: Function
-    },
-    title:{
-      type:String,
-      default:'提示'
     }
   },
   setup(props, context) {

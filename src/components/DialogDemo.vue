@@ -3,8 +3,13 @@
   <h1>示例1</h1>
   <Button @click="toggle">toggle</Button>
   <Dialog v-model:visible="visible" :close-onclick-overlay="true" :ok="ok" :cancel="cancel">
-    <div>你好</div>
-    <div>hi</div>
+    <template v-slot:content>
+      <div>你好</div>
+      <div>hi</div>
+    </template>
+    <template v-slot:title>
+      <strong>标题</strong>
+    </template>
   </Dialog>
 </template>
 
