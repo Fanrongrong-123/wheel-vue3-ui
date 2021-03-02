@@ -10,7 +10,7 @@ export const openDialog = (options) => {
       return h(Dialog, {
         visible: true, 'onUpdate:visible': (newVisible) => {
           if (newVisible === false) {
-            app.unmount(div);
+            app.unmount(div); //将Dialog挂载到div上
             div.remove();
           }
         },
@@ -18,5 +18,5 @@ export const openDialog = (options) => {
       }, {title, content});
     }
   });
-  app.mount(div); //将Dialog挂载到div上
+  app.mount(div);
 };
