@@ -1,11 +1,10 @@
 <template>
   <div class="wheel-tabs">
-    <div class="wheel-tabs-nav">
+    <div class="wheel-tabs-nav" ref="container">
       <div class="wheel-tabs-nav-item"
            v-for="(t,index) in titles" :key="index"
            :class="{selected:t===selected}" @click="select(t)"
-           :ref="el=>{ if (el) navItems[index]=el}"
-      >{{ t }}
+           :ref="el=>{ if (el) navItems[index]=el}">{{ t }}
       </div>
       <div class="wheel-tabs-nav-indicator" ref="indicator"></div>
     </div>
@@ -20,7 +19,7 @@
 <script lang="ts">
 
 import Tab from './Tab.vue';
-import {ref, onMounted} from 'vue';
+import {ref, onMounted, onUpdated} from 'vue';
 
 export default {
   props: {
@@ -31,12 +30,20 @@ export default {
   setup(props, context) {
     const navItems = ref<HTMLDivElement[]>([]);
     const indicator = ref<HTMLDivElement>(null);
-    onMounted(() => {
+    const container = ref<HTMLDivElement>(null);
+    const x = () => {
       const divs = navItems.value; //获取nav的div
       const result = divs.filter(div => div.classList.contains('selected'))[0]; //筛选出含有selected的元素
-      const {width} = result.getBoundingClientRect();
+      const {width} = result.getBoundingClientRect(); //获取选中nav的宽度
       indicator.value.style.width = width + 'px'; //让indicator的宽度等于选中Nav的宽度
-    });
+      const {left: left1} = container.value.getBoundingClientRect(); //获取整个nav的左坐标
+      const {left: left2} = result.getBoundingClientRect();//获取选中nav的左坐标
+      const left = left2 - left1;
+      indicator.value.style.left = left + 'px';
+    };
+    onMounted(x);
+    onUpdated(x);
+
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -50,7 +57,7 @@ export default {
     const select = (title: String) => {
       context.emit('update:selected', title);
     };
-    return {defaults, titles, select, navItems, indicator};
+    return {defaults, titles, select, navItems, indicator, container};
   }
 };
 </script>
@@ -89,6 +96,7 @@ $border-color: #d9d9d9;
       background: $green;
       bottom: -1px;
       left: 0;
+      transition: all 250ms;
     }
   }
 
@@ -104,6 +112,4 @@ $border-color: #d9d9d9;
     }
   }
 }
-
-
 </style>
