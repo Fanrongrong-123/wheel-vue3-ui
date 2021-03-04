@@ -1,7 +1,11 @@
 <template>
   <div class="topnav">
     <span class="toggalMenu" @click="toggalMenu">菜单</span>
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-king"></use>
+      </svg>
+    </div>
     <ul class="menu">
       <li>菜单一</li>
       <li>菜单二</li>
@@ -37,6 +41,10 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    >svg{
+      width: 32px;
+      height: 32px;
+    }
   }
 
   > .menu {
