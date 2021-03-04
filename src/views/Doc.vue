@@ -57,14 +57,17 @@ export default {
     padding-left: 160px;
 
     display: flex;
+
     > aside {
       flex-shrink: 0;
     }
+
     > main {
       flex-grow: 1;
       padding: 16px;
       background: white;
     }
+
     @media (max-width: 500px) {
       padding-left: 0;
       padding-top: 50px;
@@ -82,6 +85,7 @@ aside {
   padding-top: 70px;
   height: 100%;
   padding-left: 16px;
+  border: 1px solid red;
 
   > h2 {
     margin-bottom: 4px;
@@ -94,7 +98,7 @@ aside {
   }
 }
 
-main{
+main {
   overflow: auto;
 }
 </style>

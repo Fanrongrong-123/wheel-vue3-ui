@@ -29,7 +29,7 @@ export default {
     const navItems = ref<HTMLDivElement[]>([]);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    const x = () => {
+    const indicators = () => {
       const divs = navItems.value; //获取nav的div
       const result = divs.filter(div => div.classList.contains('selected'))[0]; //筛选出含有selected的元素
       const {width} = result.getBoundingClientRect(); //获取选中nav的宽度
@@ -39,8 +39,8 @@ export default {
       const left = left2 - left1;
       indicator.value.style.left = left + 'px';
     };
-    onMounted(x);
-    onUpdated(x);
+    onMounted(indicators);
+    onUpdated(indicators);
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
@@ -94,7 +94,7 @@ $border-color: #d9d9d9;
 
     &-indicator {
       position: absolute;
-      width: 100px;
+      width: 80px;
       height: 3px;
       background: $green;
       bottom: -1px;
