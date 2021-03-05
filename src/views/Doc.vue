@@ -1,8 +1,20 @@
 <template>
   <div class="layout">
-    <topnav class="nav"/>
+    <Topnav class="nav" :toggal-menu-button-visible="true"/>
     <div class="content">
       <aside v-if="menuVisible">
+        <h2>文档</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/get-start">开始</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/intro">介绍</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install">安装</router-link>
+          </li>
+        </ol>
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -42,6 +54,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-active{
+  text-decoration: underline;
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -85,7 +100,6 @@ aside {
   padding-top: 70px;
   height: 100%;
   padding-left: 16px;
-  border: 1px solid red;
 
   > h2 {
     margin-bottom: 4px;

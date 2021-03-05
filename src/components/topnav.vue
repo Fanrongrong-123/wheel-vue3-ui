@@ -1,14 +1,15 @@
 <template>
   <div class="topnav">
-    <span class="toggalMenu" @click="toggalMenu">菜单</span>
-    <div class="logo">
+    <span class="toggalMenu" @click="toggalMenu" v-if="toggalMenuButtonVisible">菜单</span>
+    <router-link to="/" class="logo">
       <svg class="icon">
         <use xlink:href="#icon-king"></use>
       </svg>
-    </div>
+    </router-link>
     <ul class="menu">
-      <li>菜单一</li>
-      <li>菜单二</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -17,6 +18,12 @@
 import {inject, Ref} from 'vue';
 
 export default {
+  props: {
+    toggalMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible');
     const toggalMenu = () => {
@@ -41,7 +48,8 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
-    >svg{
+
+    > svg {
       width: 32px;
       height: 32px;
     }
@@ -54,6 +62,7 @@ export default {
 
     > li {
       margin: 0 1em;
+      color: #03928b;
     }
   }
 
