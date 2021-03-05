@@ -6,10 +6,10 @@
         <h2>文档</h2>
         <ol>
           <li>
-            <router-link to="/doc/get-start">开始</router-link>
+            <router-link to="/doc/intro">介绍</router-link>
           </li>
           <li>
-            <router-link to="/doc/intro">介绍</router-link>
+            <router-link to="/doc/get-start">开始</router-link>
           </li>
           <li>
             <router-link to="/doc/install">安装</router-link>
