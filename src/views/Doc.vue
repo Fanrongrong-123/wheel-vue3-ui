@@ -54,9 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.router-link-active{
-  text-decoration: underline;
-}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -88,6 +86,10 @@ export default {
       padding-top: 50px;
     }
   }
+
+  > main {
+    overflow: auto;
+  }
 }
 
 
@@ -99,20 +101,25 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
-  padding-left: 16px;
 
   > h2 {
     margin-bottom: 4px;
+    padding: 0 16px;
   }
 
   > ol {
     > li {
-      padding: 4px 0;
+      > a {
+        text-decoration: none;
+        display: block;
+        padding: 4px 16px;
+      }
+
+      .router-link-active {
+        background: white;
+      }
     }
   }
 }
 
-main {
-  overflow: auto;
-}
 </style>
