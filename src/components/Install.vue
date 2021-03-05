@@ -1,23 +1,14 @@
 <template>
-  <article class="markdown-body">
-    <h1>安装</h1>
-    <p>打开终端运行如下命令：</p>
-    <pre> <code>npm install wheel-ui</code> </pre>
-    <p>或</p>
-    <pre> <code>yarn add wheel-ui</code> </pre>
-
-    <p>
-      下一节：<a href="#/doc/get-start">开始使用</a>
-    </p>
+  <article class="markdown-body" v-html="md">
   </article>
 </template>
 
-<script>
+<script lang="ts">
+import md from '../makrdowm/install.md';
+
 export default {
-  name: 'Install'
-}
-</script>开始
-
-<style scoped>
-
-</style>
+  data() {
+    return {md};
+  }
+};
+</script>
