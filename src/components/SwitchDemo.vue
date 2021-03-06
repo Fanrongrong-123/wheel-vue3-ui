@@ -1,14 +1,10 @@
 <template>
-  <!--  <Switch :value="value" @update:value="value=$event"/>-->
-  <!--  <Switch v-model:value="value"/>-->
-  <!--  双向绑定value（自动监听value的值）-->
-
   <div>
     <h1>Switch 组件示例</h1>
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <SwitchDemo1/>
+        <component :is="SwitchDemo1"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -20,6 +16,7 @@
     <div class="demo">
       <h2>支持disabled</h2>
       <div class="demo-component">
+        <component :is="SwitchDemo2"/>
         <SwitchDemo2 disabled/>
       </div>
       <div class="demo-actions">
@@ -40,7 +37,7 @@ import SwitchDemo1 from './Switch.demo1.vue';
 import SwitchDemo2 from './Switch.demo2.vue';
 
 export default {
-  components: {SwitchDemo2, Button, SwitchDemo1},
+  components: {Button},
   setup() {
     const bool = ref(false);
     return {bool, SwitchDemo1, SwitchDemo2};
