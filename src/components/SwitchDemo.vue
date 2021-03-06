@@ -8,7 +8,7 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch v-model:value="bool"/>
+        <SwitchDemo1/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -20,7 +20,7 @@
     <div class="demo">
       <h2>支持disabled</h2>
       <div class="demo-component">
-        <Switch v-model:value="bool" disabled/>
+        <SwitchDemo2 disabled/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -34,12 +34,13 @@
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
 import Button from '../lib/Button.vue';
+import SwitchDemo1 from './Switch.demo1.vue'
+import SwitchDemo2 from './Switch.demo2.vue';
 
 export default {
-  components: {Button, Switch},
+  components: {SwitchDemo2, Button, SwitchDemo1},
   setup() {
     const bool = ref(false);
     return {bool};
@@ -72,9 +73,10 @@ $border-color: #d9d9d9;
   &-code {
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
-    >pre{
+
+    > pre {
       line-height: 1.1;
-      font-family:  Consolas, 'Courier New', Courier, monospace;
+      font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
     }
   }
