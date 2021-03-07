@@ -12,7 +12,6 @@ import {ref} from 'vue'
 
 export default {
   components: {Button},
-  name: 'ButtonDemo5',
   setup() {
     const isloading = ref(false)
     const onclick = () => {

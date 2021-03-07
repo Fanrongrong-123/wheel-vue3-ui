@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import {openDialog} from '../lib/openDialog.ts'
-import Button from '../lib/Button.vue';
+import {openDialog} from '../../lib/openDialog.ts'
+import Button from '../../lib/Button.vue';
 export default {
   components:{Button},
   setup() {

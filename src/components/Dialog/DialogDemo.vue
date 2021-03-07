@@ -8,7 +8,7 @@
 
 <script>
 
-import Demo from './Demo.vue'
+import Demo from '../Demo.vue'
 import DialogDemo1 from './DialogDemo1.vue'
 import DialogDemo2 from './DialogDemo2.vue'
 

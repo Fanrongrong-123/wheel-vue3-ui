@@ -21,7 +21,6 @@
 import Button from '../../lib/Button.vue'
 
 export default {
-  name:'ButtonDemo2',
   components: {Button},
 }
 </script>

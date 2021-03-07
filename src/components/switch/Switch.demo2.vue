@@ -9,7 +9,6 @@ import {ref} from 'vue';
 
 export default {
   components: {Switch},
-  name: 'SwitchDemo2',
   setup() {
     const bool = ref(false);
     return {bool};
