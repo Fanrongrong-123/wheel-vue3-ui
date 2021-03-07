@@ -1,7 +1,9 @@
 <demo>常规用法</demo>
 <template>
   <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="visible" :close-onclick-overlay="true" :ok="ok" :cancel="cancel">
+  <Dialog v-model:visible="visible"
+          :close-onclick-overlay="true"
+          :ok="ok" :cancel="cancel">
     <template v-slot:content>
       <div>你好</div>
       <div>hi</div>

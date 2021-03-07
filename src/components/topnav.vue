@@ -8,7 +8,7 @@
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/doc">文档</router-link>
+        <router-link to="/doc/intro">文档</router-link>
       </li>
     </ul>
   </div>
@@ -44,6 +44,9 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  @media (max-width: 500px) {
+    position: static;
+  }
 
   > .logo {
     max-width: 6em;

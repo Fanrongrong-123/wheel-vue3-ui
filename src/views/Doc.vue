@@ -83,7 +83,7 @@ export default {
 
     @media (max-width: 500px) {
       padding-left: 0;
-      padding-top: 50px;
+      padding-top: 0;
     }
   }
 
@@ -102,6 +102,7 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  z-index: 1;
 
   > h2 {
     margin-bottom: 4px;
