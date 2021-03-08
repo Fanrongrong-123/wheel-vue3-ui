@@ -6,7 +6,7 @@
         <h1>Vue3 UI</h1>
         <h2>一个厉害的UI框架</h2>
         <p class="actions">
-          <a href="#">GitHub</a>|
+          <a href="https://github.com/Fanrongrong-123/wheel-vue3-ui.git">Github</a>|
           <router-link to="/doc/get-start">开始</router-link>
         </p>
       </div>
