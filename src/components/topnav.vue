@@ -83,6 +83,14 @@ export default {
       display: none;
     }
   }
+  @media (max-width: 500px) {
+    .toggalMenu {
+      position: fixed;
+      left: 16px;
+      background: fade-out(grey, (0.5));
+      padding:0 3px;
+    }
+  }
 }
 
 </style>
