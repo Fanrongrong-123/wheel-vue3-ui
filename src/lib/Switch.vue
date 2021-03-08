@@ -1,10 +1,8 @@
 <template>
   <div>
-    <button class="wheel-switch" @click="toggle" :class="{checked:value}">
-      <span>
-        <span class="off">off</span>
-        <span class="on">on</span>
-      </span>
+    <button class="wheel-switch" @click="toggle"
+            :class="{checked:value}" :disabled="disabled">
+      <span></span>
     </button>
   </div>
 </template>
@@ -12,7 +10,14 @@
 <script lang="ts">
 export default {
   props: {
-    value: Boolean
+    value: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
     const toggle = () => {
@@ -37,17 +42,23 @@ $h2: 22-4px;
 
   &.checked > span {
     left: calc(100% - #{$h2} - 2px); // 移到最外面再向内移一个span的宽度加两像素
-    > .on {
-      display: block;
-    }
+    animation: QQ alternate linear 250ms;
+  }
 
-    > .off {
-      display: none;
+  @keyframes QQ {
+    0% {
+      width: $h2*1.5;
+    }
+    75% {
+      width: $h2;
+    }
+    100% {
+      width: $h2*1.5;
     }
   }
 
   &.checked {
-    background: blue;
+    background: #03928b;
   }
 
   &:focus {
@@ -62,11 +73,7 @@ $h2: 22-4px;
     width: $h2;
     background: white;
     border-radius: $h2/2;
-    transition: left 250ms;
-
-    > .on {
-      display: none;
-    }
+    transition: all 250ms;
   }
 
   > span {
