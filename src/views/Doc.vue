@@ -69,6 +69,9 @@ export default {
     padding-top: 50px;
     padding-left: 160px;
     display: flex;
+    @media (max-width: 500px) {
+      margin-top: 50px;
+    }
 
     > aside {
       flex-shrink: 0;

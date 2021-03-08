@@ -1,9 +1,13 @@
 <template>
   <div class="topnav">
-    <span class="toggalMenu" @click="toggalMenu" v-if="toggalMenuButtonVisible">菜单</span>
+    <span class="toggalMenu" @click="toggalMenu" v-if="toggalMenuButtonVisible">
+      <svg class="icon">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </span>
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-king"></use>
+        <use xlink:href="#icon-wheel"></use>
       </svg>
     </router-link>
     <ul class="menu">
@@ -37,15 +41,18 @@ export default {
 <style lang="scss" scoped>
 .topnav {
   display: flex;
-  padding: 16px;
+  padding: 8px 16px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 500px) {
-    position: static;
+    background: #f6f8fa;
+    box-shadow: 0 0 3px rgb(0 0 0 / 25%);
+
   }
 
   > .logo {
@@ -81,14 +88,6 @@ export default {
   @media (min-width: 500px) {
     .toggalMenu {
       display: none;
-    }
-  }
-  @media (max-width: 500px) {
-    .toggalMenu {
-      position: fixed;
-      left: 16px;
-      background: fade-out(grey, (0.5));
-      padding:0 3px;
     }
   }
 }

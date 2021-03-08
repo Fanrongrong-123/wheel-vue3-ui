@@ -75,12 +75,6 @@ $h2: 22-4px;
     border-radius: $h2/2;
     transition: all 250ms;
   }
-
-  > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 </style>

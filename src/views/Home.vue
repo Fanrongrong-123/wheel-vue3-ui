@@ -4,10 +4,10 @@
       <Topnav/>
       <div class="banner">
         <h1>Vue3 UI</h1>
-        <h2>一个厉害的UI框架</h2>
+        <h2>一个用心的UI框架</h2>
         <p class="actions">
           <a href="https://github.com/Fanrongrong-123/wheel-vue3-ui.git">Github</a>|
-          <router-link to="/doc/get-start">开始</router-link>
+          <router-link to="/doc/intro">开始</router-link>
         </p>
       </div>
     </div>
@@ -52,8 +52,8 @@ export default {
 $blue: #02bcb0;
 
 .topnavAngBanner {
-  background: rgb(227, 255, 253);
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  background: rgb(246, 248, 250);
+  background: linear-gradient(145deg, rgba(246, 248, 250, 1) 0%, rgba(202, 226, 227, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%); //圆弧
 }
 
@@ -105,14 +105,14 @@ $blue: #02bcb0;
 
 .banner {
   color: #03928b;
-  padding: 100px 0;
+  padding: 72px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
   @media (max-width: 500px) {
-    padding: 24px 0;
+    padding: 64px 0;
   }
 
   > .actions {
