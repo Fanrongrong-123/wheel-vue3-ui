@@ -94,8 +94,7 @@ export default {
 
 
 aside {
-  background: rgb(227, 255, 253);
-  background: linear-gradient(45deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  background: #f6f8fa;
   width: 150px;
   position: fixed;
   top: 0;

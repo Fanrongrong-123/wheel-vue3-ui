@@ -66,6 +66,9 @@ $blue: #02bcb0;
   @media (min-width: 1200px) {
     width: 1200px;
   }
+  @media (max-width: 500px) {
+    margin: 24px auto;
+  }
 
   > ul {
     display: flex;
@@ -109,6 +112,9 @@ $blue: #02bcb0;
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
+  @media (max-width: 500px) {
+    padding: 24px 0;
+  }
 
   > .actions {
     padding: 8px 0;

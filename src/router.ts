@@ -6,12 +6,19 @@ import ButtonDemo from './components/Button/ButtonDemo.vue';
 import DialogDemo from './components/Dialog/DialogDemo.vue';
 import TabsDemo from './components/Tabs/TabsDemo.vue';
 
+// @ts-ignore
+import intro from './makrdown/intro.md';
+// @ts-ignore
+import install from './makrdown/install.md';
+// @ts-ignore
+import getStart from './makrdown/get-start.md';
+
 import {createWebHashHistory, createRouter} from 'vue-router';
 
 import MarkDown from './components/MarkDown.vue';
 import {h} from 'vue';
 
-const md = filename => h(MarkDown, {path:`../makrdown/${filename}.md`, key: filename});
+const md = string => h(MarkDown, {content: string, key: string});
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -22,9 +29,9 @@ export const router = createRouter({
     {
       path: '/doc', component: Doc,
       children: [
-        {path: 'intro', component: md('Intro')},
-        {path: 'install', component: md('Install')},
-        {path: 'get-start', component: md('GetStart')},
+        {path: 'intro', component: md(intro)},
+        {path: 'install', component: md(install)},
+        {path: 'get-start', component: md(getStart)},
         {path: 'switch', component: SwitchDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
