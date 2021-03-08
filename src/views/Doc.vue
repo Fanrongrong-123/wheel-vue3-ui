@@ -68,7 +68,6 @@ export default {
     flex-grow: 1;
     padding-top: 50px;
     padding-left: 160px;
-
     display: flex;
 
     > aside {
@@ -79,6 +78,7 @@ export default {
       flex-grow: 1;
       padding: 16px;
       background: white;
+      overflow: auto;
     }
 
     @media (max-width: 500px) {

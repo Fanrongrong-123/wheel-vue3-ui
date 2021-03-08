@@ -48,6 +48,7 @@ $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
+  width: 100vm;
 
   > h2 {
     font-size: 20px;
@@ -65,8 +66,11 @@ $border-color: #d9d9d9;
   }
 
   &-code {
-    padding: 8px 16px;
+    padding: 5px 16px;
     border-top: 1px dashed $border-color;
+    @media (max-width: 500px) {
+      padding: 4px 4px;
+    }
 
     > pre {
       line-height: 1.1;
